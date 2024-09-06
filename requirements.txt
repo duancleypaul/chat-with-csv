@@ -1,0 +1,4 @@
+langchain_experimental
+pandas
+langchain_openai
+streamlit
