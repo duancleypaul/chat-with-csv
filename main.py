@@ -17,16 +17,12 @@ def main():
     
     OPENAI_API_KEY = st.sidebar.text_input("OpenAI API Key:", type="password")
     
-    # if "csv_file" not in st.session_state:
-    #     st.session_state["csv_file"] = csv_file
-    #     st.write("entrei")
-    
     if csv_file and OPENAI_API_KEY:
         df = load_file(csv_file)
         st.write(df)
         
         agent = create_csv_agent(
-            OpenAI(temperature=0.5, openai_api_key=OPENAI_API_KEY),
+            OpenAI(temperature=0, openai_api_key=OPENAI_API_KEY),
             st.session_state["csv_file"],
             verbose=True,
             allow_dangerous_code=True
